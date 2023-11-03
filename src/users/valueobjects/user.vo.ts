@@ -1,0 +1,23 @@
+import { IsEmail, IsNotEmpty, MinLength } from 'class-validator';
+
+export class CreateUserVO {
+  @IsNotEmpty()
+  @MinLength(3)
+  username: string;
+
+  @IsNotEmpty()
+  @MinLength(3)
+  firstName: string;
+
+  @IsNotEmpty()
+  @MinLength(3)
+  lastName: string;
+
+  @IsNotEmpty()
+  @MinLength(8)
+  password: string;
+
+  @IsNotEmpty()
+  @IsEmail()
+  email: string;
+}
